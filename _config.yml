@@ -1,6 +1,6 @@
 # Site settings
 title: BY Blog
-SEOTitle: 左效超的博客 | BY ZXC
+SEOTitle: 左效超的博客
 header-img: img/post-bg-desk.jpg
 email: zxcyoung@foxmail.com
 description: "Every failure is leading towards success."
@@ -12,7 +12,7 @@ github_repo: "git@github.com:zxcyoung/zxcyoung.github.io.git" # you code reposit
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "Goals determine what you going to be!"
-sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/zxc.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
