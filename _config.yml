@@ -1,4 +1,4 @@
-# Site settings
+    # Site settings
 title: BY Blog
 SEOTitle: 左效超的博客
 header-img: img/tag-bg-o.jpg
@@ -21,8 +21,8 @@ RSS: false
 # weibo_username:     qiubaiying
 zhihu_username:     zuo-xiao-chao-23
 github_username:    zxcyoung
-facebook_username:  nofacebook
-jianshu_username:   noname
+#facebook_username:  nofacebook
+#jianshu_username:   noname
 #twitter_username:   qiubaiying
 
 
@@ -62,8 +62,8 @@ kramdown:
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: f2c84e7629bb1446c1a4                            #生成的clientID
-  clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d    #生成的clientSecret
+  clientID: a75d88aa64c326845165                            #生成的clientID
+  clientSecret: ba1cc1d52fbc875f0526e136869cdc21d0e624bc    #生成的clientSecret
   repo: zxcyoung.github.io    #仓库名称
   owner: zxcyoung    #github用户名
   admin: zxcyoung
@@ -99,9 +99,6 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "WY",
-        href: "http://zhengwuyang.com"
-    },{
         title: "知乎·ZXC",
         href: "https://www.zhihu.com/people/zuo-xiao-chao-23/activities"
     },{
