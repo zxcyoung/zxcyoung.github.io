@@ -27,7 +27,7 @@ QCustomPlot的官方网址：[Qt Plotting Widget *QCustomPlot* - Introduction](h
 
 ------
 
-![class relationship](C:\Users\oo\Documents\GitHub\zxcyoung.github.io\img\RelationOverview.png)
+![class relationship](https://raw.githubusercontent.com/zxcyoung/zxcyoung.github.io/master/img/RelationOverview.png)
 
 ------
 
@@ -45,7 +45,7 @@ QCustomPlot的官方网址：[Qt Plotting Widget *QCustomPlot* - Introduction](h
 
    ------
 
-   ![](C:\Users\oo\Documents\GitHub\zxcyoung.github.io\img\InheritanceOverview.png)
+   ![](https://raw.githubusercontent.com/zxcyoung/zxcyoung.github.io/master/img/InheritanceOverview.png)
 
    ------
 
@@ -61,4 +61,84 @@ QCustomPlot的官方网址：[Qt Plotting Widget *QCustomPlot* - Introduction](h
 
    #### 3.程序示例代码
 
-   ​	TODO
+   QCPItemText:
+
+   ```c++
+   void CustomPlotItem::initTimeText()
+   {
+       QColor clrDef(Qt::black);
+       QBrush brushDef(Qt::NoBrush);
+       QPen penDef(clrDef);
+       timetext = new QCPItemText(getPlot());
+       timetext->setClipToAxisRect(false);
+       timetext->setPadding(QMargins(3, 3, 3, 3));
+       timetext->setBrush(brushDef);
+       timetext->setPen(penDef);
+       timetext->position->setAxes(m_map[m_list.at(0)]->axis(QCPAxis::atBottom)
+               ,m_map[m_list.at(0)]->axis(QCPAxis::atLeft));
+       timetext->position->setTypeX(QCPItemPosition::ptAxisRectRatio);
+       timetext->position->setTypeY(QCPItemPosition::ptAxisRectRatio);
+       timetext->setPositionAlignment(Qt::AlignTop | Qt::AlignHCenter);
+       timetext->setFont(QFont("Arial", 5));
+       timetext->position->setCoords(0.85,0);
+       timetext->setText("");
+   }
+   ```
+
+   应用布局建立坐标轴及Graph：
+
+   ```c++
+   void CustomPlotItem::update(QString signal)
+   {
+           QMargins marg(10,0,0,0);
+           m_map[signal]=new QCPAxisRect(getPlot());
+           m_allqueue[signal]=new QQueue<QPoint>();
+           getPlot()->plotLayout()->setColumnSpacing(0);
+           m_map[signal]->axis(QCPAxis::atLeft)->setTickLabelSide(QCPAxis::lsInside);
+           m_map[signal]->setMinimumMargins(marg);
+           QFont ticklabelfont = getPlot()->font();
+           ticklabelfont.setPointSize(5);
+           m_map[signal]->axis(QCPAxis::atLeft)->setTickLabelFont(ticklabelfont);
+           m_map[signal]->axis(QCPAxis::atBottom)->setTickLabelFont(ticklabelfont);
+           m_map[signal]->axis(QCPAxis::atBottom)->setRange(0,30);
+           getPlot()->plotLayout()->addElement(m_list.size()-1, 0, m_map[signal]);
+           QCPGraph *newgraph = getPlot()->addGraph(m_map[signal]->axis(QCPAxis::atBottom)
+                               , m_map[signal]->axis(QCPAxis::atLeft));
+           m_graphs.append(newgraph);
+           QFont leftlabelfont=getPlot()->font();
+           leftlabelfont.setPointSize(6);
+           m_map[signal]->axis(QCPAxis::atLeft)->setLabelFont(leftlabelfont);
+           m_map[signal]->axis(QCPAxis::atLeft)->setLabel(signal.split(":").at(0));
+           QSharedPointer<QCPAxisTickerTime> timeTicker(new QCPAxisTickerTime);
+           timeTicker->setTimeFormat("%h:%m:%s:%z");
+           getPlot()->plotLayout()->simplify();
+   }
+   ```
+
+   鼠标移动槽函数：
+
+   ```c++
+   //鼠标坐标转化为CustomPlot内部坐标
+   float x_val = customPlot->xAxis->pixelToCoord(x_pos);
+   float y_val = customPlot->yAxis->pixelToCoord(y_pos);
+   //获得x轴坐标位置对应的曲线上y的值
+   float line_y_val = customPlot->graph(0)->data()->at(x_val)->value;
+   //曲线的上点坐标位置，用来显示QToolTip提示框
+   float out_x = customPlot->xAxis->coordToPixel(x_val);
+   float out_y = customPlot->yAxis->coordToPixel(line_y_val);
+    
+   QString str,strToolTip;
+   str = QString::number(x_val,10,3);
+   strToolTip += "x: ";
+   strToolTip += str;
+   strToolTip += "\n";
+    
+   str = QString::number(line_y_val,10,3);
+   strToolTip += "y: ";
+   strToolTip += str;
+   strToolTip += "\n";
+    
+   QToolTip::showText(mapToGlobal(QPoint(out_x,out_y)),strToolTip,customPlot);
+   ```
+
+
