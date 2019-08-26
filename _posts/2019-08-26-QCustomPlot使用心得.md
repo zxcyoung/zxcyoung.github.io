@@ -27,7 +27,11 @@ QCustomPlot的官方网址：[Qt Plotting Widget *QCustomPlot* - Introduction](h
 
 ------
 
+<<<<<<< HEAD
 ![class relationship](https://raw.githubusercontent.com/zxcyoung/zxcyoung.github.io/master/img/RelationOverview.png)
+=======
+![class relationship](img\RelationOverview.png)
+>>>>>>> origin/master
 
 ------
 
@@ -45,7 +49,11 @@ QCustomPlot的官方网址：[Qt Plotting Widget *QCustomPlot* - Introduction](h
 
    ------
 
+<<<<<<< HEAD
    ![](https://raw.githubusercontent.com/zxcyoung/zxcyoung.github.io/master/img/InheritanceOverview.png)
+=======
+   ![overview](img\InheritanceOverview.png)
+>>>>>>> origin/master
 
    ------
 
@@ -61,6 +69,7 @@ QCustomPlot的官方网址：[Qt Plotting Widget *QCustomPlot* - Introduction](h
 
    #### 3.程序示例代码
 
+<<<<<<< HEAD
    QCPItemText:
 
    ```c++
@@ -142,3 +151,6 @@ QCustomPlot的官方网址：[Qt Plotting Widget *QCustomPlot* - Introduction](h
    ```
 
 
+=======
+   ​	TODO
+>>>>>>> origin/master
