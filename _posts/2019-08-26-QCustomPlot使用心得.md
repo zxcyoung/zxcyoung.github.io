@@ -27,12 +27,9 @@ QCustomPlot的官方网址：[Qt Plotting Widget *QCustomPlot* - Introduction](h
 
 ------
 
-<<<<<<< HEAD
+
 ![class relationship](https://raw.githubusercontent.com/zxcyoung/zxcyoung.github.io/master/img/RelationOverview.png)
 =======
-![class relationship](img\RelationOverview.png)
->>>>>>> origin/master
-
 ------
 
 ​		1.一个图表(QCustomPlot)：包含一个或者多个图层、一个或多个item(用于展示一些固定的元素，例如文本、线段等)、一个或者多个可以绘制的元素、一个布局
@@ -49,13 +46,9 @@ QCustomPlot的官方网址：[Qt Plotting Widget *QCustomPlot* - Introduction](h
 
    ------
 
-<<<<<<< HEAD
    ![](https://raw.githubusercontent.com/zxcyoung/zxcyoung.github.io/master/img/InheritanceOverview.png)
 =======
-   ![overview](img\InheritanceOverview.png)
->>>>>>> origin/master
-
-   ------
+------
 
    ​	1.QCPAbstractPlottable：绘图元素，包含：折线图(QCPGraph)、曲线图(QCPCurve)、柱状图(QCPBars)、QCPStatiBox(盒子图)、QCPColorMap(色谱图)、QCPFinancial(金融图)
 
@@ -69,7 +62,6 @@ QCustomPlot的官方网址：[Qt Plotting Widget *QCustomPlot* - Introduction](h
 
    #### 3.程序示例代码
 
-<<<<<<< HEAD
    QCPItemText:
 
    ```c++
@@ -149,8 +141,3 @@ QCustomPlot的官方网址：[Qt Plotting Widget *QCustomPlot* - Introduction](h
     
    QToolTip::showText(mapToGlobal(QPoint(out_x,out_y)),strToolTip,customPlot);
    ```
-
-
-=======
-   ​	TODO
->>>>>>> origin/master
