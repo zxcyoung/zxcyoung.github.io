@@ -27,7 +27,7 @@ QCustomPlot的官方网址：[Qt Plotting Widget *QCustomPlot* - Introduction](h
 
 ------
 
-![class relationship](C:\Users\oo\Documents\GitHub\zxcyoung.github.io\img\RelationOverview.png)
+![class relationship](img\RelationOverview.png)
 
 ------
 
@@ -45,7 +45,7 @@ QCustomPlot的官方网址：[Qt Plotting Widget *QCustomPlot* - Introduction](h
 
    ------
 
-   ![](C:\Users\oo\Documents\GitHub\zxcyoung.github.io\img\InheritanceOverview.png)
+   ![](img\InheritanceOverview.png)
 
    ------
 
