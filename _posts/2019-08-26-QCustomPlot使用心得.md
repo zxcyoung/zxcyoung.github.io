@@ -45,7 +45,7 @@ QCustomPlot的官方网址：[Qt Plotting Widget *QCustomPlot* - Introduction](h
 
    ------
 
-   ![](img\InheritanceOverview.png)
+   ![overview](img\InheritanceOverview.png)
 
    ------
 
